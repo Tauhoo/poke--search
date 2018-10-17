@@ -16,8 +16,6 @@ export default class extends Component {
   onUpdate = async data => {
     const result = await P.getPokemonByName(data.input).then(res => res);
     this.setState(result);
-    console.log("ooo");
-    console.log(result);
     //this.setState(data);
   };
   render = () => (
