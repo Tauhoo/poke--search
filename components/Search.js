@@ -41,6 +41,9 @@ export default class extends Component {
     e.preventDefault();
     this.props.onUpdate(this.state);
   };
+  componentDidMount() {
+    this.props.onUpdate({ input: "pikachu" });
+  }
   render = () => (
     <Container>
       <form onSubmit={this.onSubmit}>

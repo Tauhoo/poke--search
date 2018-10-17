@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Imgs from "../components/Imgs";
 import Topic from "../components/Topic";
 import State from "../components/State";
+import Screen from "../components/Screen";
 import Pokedex from "pokedex-promise-v2";
 const options = {
   protocol: "https",
@@ -14,14 +15,15 @@ const options = {
 };
 const P = new Pokedex(options);
 export default class extends Component {
-  state = {};
+  state = { screen: true };
   onUpdate = async data => {
     const result = await P.getPokemonByName(data.input).then(res => res);
-    this.setState(result);
+    this.setState({ ...result, screen: false });
   };
   render = () => (
     <>
       <Navbar onUpdate={this.onUpdate} />
+      <Screen isOn={this.state.screen} />
       <Topic name={this.state.name} />
       <Imgs imgs={this.state.sprites} />
       <State state={this.state.stats} />

@@ -10,6 +10,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 20px;
+  z-index: 1000;
 `;
 const Logo = styled.span`
   flex: 1;
