@@ -28,6 +28,10 @@ const Button = styled.button`
 `;
 
 export default class extends Component {
+  constructor(props) {
+    super(props);
+    console.log(props);
+  }
   state = {
     input: ""
   };
@@ -35,8 +39,8 @@ export default class extends Component {
     this.setState({ input: e.target.value });
   };
   onSubmit = e => {
-    console.log(this.state.input);
     e.preventDefault();
+    this.props.onUpdate(this.state);
   };
   render = () => (
     <Container>

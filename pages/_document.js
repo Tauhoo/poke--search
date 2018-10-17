@@ -6,7 +6,12 @@ export default class MyDocument extends Document {
     const sheet = new ServerStyleSheet();
     const main = sheet.collectStyles(<Main />);
     const styleTags = sheet.getStyleElement();
-
+    const global = `
+      body {
+        margin:0px;
+        padding: 0px;
+      }
+    `;
     return (
       <html>
         <Head>
@@ -16,7 +21,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           {styleTags}
-          <style>` margin: 0px; padding: 0px;`</style>
+          <style>{global}</style>
         </Head>
         <body>
           <div className="root">{main}</div>

@@ -1,4 +1,4 @@
-import react from "react";
+import react, { Component } from "react";
 import styled from "styled-components";
 import Search from "./Search";
 const Container = styled.div`
@@ -21,9 +21,11 @@ const Logo = styled.span`
     color: white;
   }
 `;
-export default () => (
-  <Container>
-    <Logo>PokeSearch</Logo>
-    <Search />
-  </Container>
-);
+export default class extends Component {
+  render = () => (
+    <Container>
+      <Logo>PokeSearch</Logo>
+      <Search onUpdate={this.props.onUpdate} />
+    </Container>
+  );
+}
