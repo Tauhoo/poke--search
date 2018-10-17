@@ -2,7 +2,7 @@ import react, { Component } from "react";
 import styled from "styled-components";
 import Search from "./Search";
 const Container = styled.div`
-  top: 1px;
+  top: 0px;
   left: 0px;
   position: fixed;
   width: 100vw;
