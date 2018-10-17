@@ -1,4 +1,4 @@
-import react from "react";
+import react, { Component } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -27,8 +27,22 @@ const Button = styled.button`
   }
 `;
 
-export default () => (
-  <Container>
-    <Input placeholder="Put your Pokemon name." />
-  </Container>
-);
+export default class extends Component {
+  state = {
+    input: ""
+  };
+  onType = e => {
+    this.setState({ input: e.target.value });
+  };
+  onSubmit = e => {
+    console.log(this.state.input);
+    e.preventDefault();
+  };
+  render = () => (
+    <Container>
+      <form onSubmit={this.onSubmit}>
+        <Input onChange={this.onType} placeholder="Put your Pokemon name." />
+      </form>
+    </Container>
+  );
+}
