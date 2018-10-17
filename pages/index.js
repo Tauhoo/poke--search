@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Imgs from "../components/Imgs";
 import Topic from "../components/Topic";
+import State from "../components/State";
 import Pokedex from "pokedex-promise-v2";
 const options = {
   protocol: "https",
@@ -25,6 +26,7 @@ export default class extends Component {
       <Navbar onUpdate={this.onUpdate} />
       <Topic name={this.state.name} />
       <Imgs imgs={this.state.sprites} />
+      <State />
     </>
   );
 }
