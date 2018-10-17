@@ -18,15 +18,13 @@ export default class extends Component {
   onUpdate = async data => {
     const result = await P.getPokemonByName(data.input).then(res => res);
     this.setState(result);
-    console.log(result);
-    //this.setState(data);
   };
   render = () => (
     <>
       <Navbar onUpdate={this.onUpdate} />
       <Topic name={this.state.name} />
       <Imgs imgs={this.state.sprites} />
-      <State />
+      <State state={this.state.stats} />
     </>
   );
 }

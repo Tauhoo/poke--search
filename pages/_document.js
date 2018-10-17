@@ -10,6 +10,8 @@ export default class MyDocument extends Document {
       body {
         margin:0px;
         padding: 0px;
+        overflow-x: hidden;
+        overflow-y: scroll;
       }
     `;
     return (

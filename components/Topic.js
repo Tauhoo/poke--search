@@ -8,7 +8,7 @@ const Container = styled.div`
   padding-bottom: 20px;
 `;
 const Text = styled.span`
-  font-size: 36px;
+  font-size: 72px;
   font-family: "Raleway";
 `;
 

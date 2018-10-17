@@ -1,7 +1,7 @@
 import reeact, { Component } from "react";
 import styled from "styled-components";
 const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   height: 30vw;
 `;
@@ -34,8 +34,6 @@ export default class extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.imgs !== this.state.imgs) {
       this.setState({ imgs: nextProps.imgs });
-      console.log(nextProps);
-      console.log(this.state);
     }
   }
   onClick = () => {
